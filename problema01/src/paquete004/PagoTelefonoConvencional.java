@@ -1,22 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package paquete004;
 
-import paquete001.Persona;
+public class PagoTelefonoConvencional extends Pago {
+    private double minutosConsumidos;
+    private double costoMinuto;
+    private double tarifaBase;
 
-/**
- *
- * @author reroes
- */
-public class PagoTelefonoConvencional {
-    
-    public double calcularPago(){
-        double tarifa = 6.20;
-        double minutosConsumidos = 100;
-        double costoMinuto = 0.2;
-        double pago = tarifa + (minutosConsumidos * costoMinuto);
-        return pago;
+    public PagoTelefonoConvencional(double minutosConsumidos, double costoMinuto, double tarifaBase) {
+        this.minutosConsumidos = minutosConsumidos;
+        this.costoMinuto = costoMinuto;
+        this.tarifaBase = tarifaBase;
+    }
+
+    @Override
+    public void calcularPago() {
+        valorPagado = tarifaBase + (minutosConsumidos * costoMinuto);
     }
 }
